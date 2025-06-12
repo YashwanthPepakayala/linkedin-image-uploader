@@ -31,5 +31,11 @@ def upload_image_only():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
+# if __name__ == "__main__":
+#     app.run()
+
+
 if __name__ == "__main__":
-    app.run()
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
